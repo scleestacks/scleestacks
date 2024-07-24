@@ -5,14 +5,14 @@ on:
     branches:
       - xyu/dev
     paths:
-      - "tools/test/**"
+      - "tools/cellphonedb/**"
 
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
   REPOSITORY: test # aws ecr repo path
 #  VER: fa55dae # version
-  BUILD_PATH: tools/test # dir location of build files in repo
+  BUILD_PATH: tools/cellphonedb # dir location of build files in repo
 
 permissions:
   contents: read
