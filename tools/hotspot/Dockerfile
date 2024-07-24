@@ -1,9 +1,9 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Start from a clean Python image
+FROM python:3.10-slim
 
-# Upgrade pip
-#RUN pip install --upgrade pip
+# Set the working directory in the container
+WORKDIR /app
 
-# Install scvi-tools
+# Install hotspotsc
 RUN pip install --no-cache-dir hotspotsc
 

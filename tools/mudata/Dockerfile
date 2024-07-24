@@ -1,8 +1,9 @@
-# Use Python slim image based on Debian
+# Start from a clean Python image
 FROM python:3.10-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-RUN pip install mudata
+# Install mudata
+RUN pip install --no-cache-dir mudata
 
