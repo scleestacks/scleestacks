@@ -5,5 +5,5 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Install anndata
-RUN pip install --no-cache-dir anndata
+RUN pip install --no-cache-dir anndata==0.10.8
 
