@@ -5,5 +5,5 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Install liana
-RUN pip install --no-cache-dir liana[full]
+RUN pip install --no-cache-dir liana[full]==1.3.0
 
