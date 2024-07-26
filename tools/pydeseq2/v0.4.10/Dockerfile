@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Install pydeseq2
-RUN pip install --no-cache-dir pydeseq2
+RUN pip install --no-cache-dir pydeseq2==0.4.10
 
 # Test
 # >>> from pydeseq2.dds import DeseqDataSet

@@ -4,5 +4,6 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install muon
-RUN pip install --no-cache-dir muon
+# Install doubletdetection
+RUN pip install --no-cache-dir doubletdetection==4.2
+
