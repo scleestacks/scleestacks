@@ -4,5 +4,9 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install scanpy
-RUN pip install --no-cache-dir scanpy
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install scvi-tools
+RUN pip install --no-cache-dir scvi-tools==1.1.5
+

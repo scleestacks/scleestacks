@@ -4,6 +4,7 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install spatialdata
-RUN pip install --no-cache-dir "spatialdata[extra]"
+# Install scirpy
+RUN pip install --no-cache-dir scirpy==0.17.2
 
+# https://github.com/scverse/scirpy?tab=readme-ov-file

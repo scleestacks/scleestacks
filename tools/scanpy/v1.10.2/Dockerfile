@@ -4,6 +4,5 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install squidpy
-RUN pip install --no-cache-dir squidpy
-
+# Install scanpy
+RUN pip install --no-cache-dir scanpy==1.10.2
