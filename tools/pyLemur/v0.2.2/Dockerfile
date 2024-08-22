@@ -10,3 +10,4 @@ RUN pip install --no-cache-dir pyLemur==0.2.2
 # Test
 # >>> import pylemur
 # >>> model = pylemur.tl.LEMUR(adata, design = "~ label", n_embedding=15)
+
