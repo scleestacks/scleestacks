@@ -22,3 +22,4 @@ RUN pip install --no-cache-dir SC2Spa==1.3.0
 #     && pip install --no-cache-dir ipython==8.26.0 \
 #     && pip install --no-cache-dir matplotlib==3.9.1 \
 #     && pip install --no-cache-dir seaborn==0.13.2
+
