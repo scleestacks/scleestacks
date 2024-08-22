@@ -10,7 +10,7 @@ on:
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  REPOSITORY: pyLemur # aws ecr repo path
+  REPOSITORY: pylemur # aws ecr repo path
   VER: v0.2.2 # version
   BUILD_PATH: tools/pyLemur/v0.2.2 # dir location of build files in repo
 

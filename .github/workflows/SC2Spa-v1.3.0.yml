@@ -10,7 +10,7 @@ on:
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  REPOSITORY: SC2Spa # aws ecr repo path
+  REPOSITORY: sc2spa # aws ecr repo path
   VER: v1.3.0 # version
   BUILD_PATH: tools/SC2Spa/v1.3.0 # dir location of build files in repo
 
