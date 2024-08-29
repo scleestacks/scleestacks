@@ -1,9 +1,9 @@
-LABEL org.opencontainers.image.source="https://github.com/scleestacks/scleestacks"
-LABEL maintainer="christopher.tastad@mssm.edu"
-
 
 # Start from a clean Python image, incompatible with python >= 3.10
 FROM python:3.9-slim
+
+LABEL org.opencontainers.image.source https://github.com/scleestacks/scleestacks
+LABEL maintainer="Chris Tastad <christopher.tastad@mssm.edu>"
 
 # Set the working directory in the container
 WORKDIR /app
