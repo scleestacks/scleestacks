@@ -1,4 +1,3 @@
-LABEL org.opencontainers.image.source https://github.com/scleestacks/scleestacks
 LABEL maintainer="Chris Tastad <christopher.tastad@mssm.edu>"
 
 
