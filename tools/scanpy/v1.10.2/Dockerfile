@@ -6,3 +6,4 @@ WORKDIR /app
 
 # Install scanpy
 RUN pip install --no-cache-dir scanpy==1.10.2
+
