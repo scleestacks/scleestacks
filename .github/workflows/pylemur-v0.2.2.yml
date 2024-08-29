@@ -1,18 +1,18 @@
 
-name: Build and Deploy scib 1.1.5 to GHCR
+name: Build and Deploy pylemur 0.2.2 to GHCR
 on:
   push:
     branches:
       - prod
     paths:
-      - "tools/scib/v1.1.5/**"
+      - "tools/pylemur/v0.2.2/**"
 
 env:
   REGISTRY: ghcr.io
   ORG: scleestacks
-  REPOSITORY: scib
-  VER: 1.1.5
-  BUILD_PATH: tools/scib/v1.1.5
+  REPOSITORY: pylemur
+  VER: 0.2.2
+  BUILD_PATH: tools/pylemur/v0.2.2
 
 permissions:
   contents: read
