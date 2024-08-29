@@ -1,5 +1,6 @@
-LABEL org.opencontainers.image.source="https://github.com/scleestacks/scleestacks"
-LABEL maintainer="christopher.tastad@mssm.edu"
+LABEL org.opencontainers.image.source https://github.com/scleestacks/scleestacks
+LABEL maintainer="Chris Tastad <christopher.tastad@mssm.edu>"
+
 
 
 # Start from a clean Python image, incompatible with python >= 3.10
