@@ -1,5 +1,5 @@
-name: Build and Deploy anndata v0.10.8 to AWS ECR
 
+name: Build and Deploy anndata 0.10.8 to GHCR
 on:
   push:
     branches:
@@ -8,14 +8,15 @@ on:
       - "tools/anndata/v0.10.8/**"
 
 env:
-  AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
-  REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  REPOSITORY: anndata # aws ecr repo path
-  VER: v0.10.8 # version
-  BUILD_PATH: tools/anndata/v0.10.8 # dir location of build files in repo
+  REGISTRY: ghcr.io
+  ORG: scleestacks
+  REPOSITORY: anndata
+  VER: 0.10.8
+  BUILD_PATH: tools/anndata/v0.10.8
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   deploy:
@@ -27,30 +28,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+      - name: Login to GHCR
+        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Login to Amazon ECR Public
-        id: login-ecr-public
-        uses: aws-actions/amazon-ecr-login@v1
-        with:
-          registry-type: public
-
-      # added this line to shorten the SHA tag
       - name: Add SHORT_SHA env property with commit short sha
         run: echo "SHORT_SHA=`echo ${{ github.sha }} | cut -c1-7`" >> $GITHUB_ENV
 
-      - name: Build, tag, and push docker image to Amazon ECR Public
-        env:
-          REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
+      - name: Build, tag, and push docker image to GHCR
         run: |
-          docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER $BUILD_PATH
-          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER
+          docker build -t $REGISTRY/$ORG/$REPOSITORY:$VER $BUILD_PATH
+          docker push $REGISTRY/$ORG/$REPOSITORY:$VER
