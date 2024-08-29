@@ -1,5 +1,5 @@
-name: Build and Deploy scanpy v1.10.2 to GHCR
 
+name: Build and Deploy scanpy 1.10.2 to GHCR
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ env:
   REGISTRY: ghcr.io
   ORG: scleestacks
   REPOSITORY: scanpy
-  VER: v1.10.2
+  VER: 1.10.2
   BUILD_PATH: tools/scanpy/v1.10.2
 
 permissions:

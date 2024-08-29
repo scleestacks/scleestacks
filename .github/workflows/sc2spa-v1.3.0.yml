@@ -1,18 +1,18 @@
 
-name: Build and Deploy scib 1.1.5 to GHCR
+name: Build and Deploy sc2spa 1.3.0 to GHCR
 on:
   push:
     branches:
       - prod
     paths:
-      - "tools/scib/v1.1.5/**"
+      - "tools/sc2spa/v1.3.0/**"
 
 env:
   REGISTRY: ghcr.io
   ORG: scleestacks
-  REPOSITORY: scib
-  VER: 1.1.5
-  BUILD_PATH: tools/scib/v1.1.5
+  REPOSITORY: sc2spa
+  VER: 1.3.0
+  BUILD_PATH: tools/sc2spa/v1.3.0
 
 permissions:
   contents: read

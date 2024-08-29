@@ -1,3 +1,7 @@
+LABEL org.opencontainers.image.source="https://github.com/scleestacks/scleestacks"
+LABEL maintainer="christopher.tastad@mssm.edu"
+
+
 # Start from a clean Python image
 FROM python:3.10-slim
 
@@ -6,3 +10,4 @@ WORKDIR /app
 
 # Install scanpy
 RUN pip install --no-cache-dir scanpy==1.10.2
+
