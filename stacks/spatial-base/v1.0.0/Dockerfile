@@ -13,6 +13,15 @@ RUN pip freeze > /spatialdata_reqs.txt
 # Final stage
 FROM python:3.10-slim AS final
 
+# Auto-generated labels
+LABEL org.opencontainers.image.source="https://github.com/scleestacks/scleestacks" \
+      maintainer="Chris Tastad <christopher.tastad@mssm.edu>" \
+      org.opencontainers.image.stack_name="spatial-base" \
+      org.opencontainers.image.version="1.0.0" \
+      org.scleestacks.scanpy.version="1.10.2" \
+      org.scleestacks.squidpy.version="1.6.0" \
+      org.scleestacks.spatialdata.version="0.2.1"
+
 # Copy requirements files
 COPY --from=scanpy /scanpy_reqs.txt /tmp/scanpy_reqs.txt
 COPY --from=squidpy /squidpy_reqs.txt /tmp/squidpy_reqs.txt
