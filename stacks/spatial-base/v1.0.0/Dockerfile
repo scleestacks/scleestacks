@@ -19,11 +19,12 @@ COPY --from=squidpy /squidpy_reqs.txt /tmp/squidpy_reqs.txt
 COPY --from=spatialdata /spatialdata_reqs.txt /tmp/spatialdata_reqs.txt
 
 RUN pip install pip-tools && \
-    sort -u /tmp/squidpy_reqs.txt \
+    cat /tmp/squidpy_reqs.txt \
         /tmp/spatialdata_reqs.txt \
         /tmp/scanpy_reqs.txt \
-        > /tmp/requirements.in && \
-    pip-compile /tmp/requirements.in --output-file /tmp/requirements.txt && \
+        > /tmp/combined_reqs.txt && \
+    grep -v "spatialdata==0.2.2" /tmp/combined_reqs.txt | sort -u > /tmp/sorted_reqs.txt && \
+    pip-compile /tmp/sorted_reqs.txt --output-file /tmp/requirements.txt && \
     pip install --no-cache-dir -r /tmp/requirements.txt && \
     rm /tmp/*.txt && \
     rm -rf /root/.cache/pip-tools /root/.cache/pip
