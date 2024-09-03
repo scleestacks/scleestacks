@@ -1,0 +1,40 @@
+
+name: Build and Deploy scvi-gpu 1.1.5 to GHCR
+on:
+  push:
+    branches:
+      - prod
+    paths:
+      - "tools/scvi-gpu/v1.1.5/**"
+
+env:
+  REGISTRY: ghcr.io
+  ORG: scleestacks
+  REPOSITORY: scvi-gpu
+  VER: 1.1.5
+  BUILD_PATH: tools/scvi-gpu/v1.1.5
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Add SHORT_SHA env property with commit short sha
+        run: echo "SHORT_SHA=`echo ${{ github.sha }} | cut -c1-7`" >> $GITHUB_ENV
+
+      - name: Build, tag, and push docker image to GHCR
+        run: |
+          docker build -t $REGISTRY/$ORG/$REPOSITORY:$VER $BUILD_PATH
+          docker push $REGISTRY/$ORG/$REPOSITORY:$VER

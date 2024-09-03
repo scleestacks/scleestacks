@@ -1,18 +1,18 @@
 
-name: Build and Deploy scvi 1.1.5 to GHCR
+name: Build and Deploy scvi-cpu 1.1.5 to GHCR
 on:
   push:
     branches:
       - prod
     paths:
-      - "tools/scvi/v1.1.5/**"
+      - "tools/scvi-cpu/v1.1.5/**"
 
 env:
   REGISTRY: ghcr.io
   ORG: scleestacks
-  REPOSITORY: scvi
+  REPOSITORY: scvi-cpu
   VER: 1.1.5
-  BUILD_PATH: tools/scvi/v1.1.5
+  BUILD_PATH: tools/scvi-cpu/v1.1.5
 
 permissions:
   contents: read
