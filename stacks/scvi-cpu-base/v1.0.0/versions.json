@@ -1,0 +1,11 @@
+{
+  "stack_version": "1.0.0",
+  "stack_name": "scvi-cpu-base",
+  "created_at": "2024-09-04T21:03:54.525411Z",
+  "applications": [
+    {
+      "name": "Scanpy",
+      "version": "1.10.2"
+    }
+  ]
+}

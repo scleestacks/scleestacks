@@ -1,0 +1,6 @@
+applications:
+- name: Scanpy
+  version: 1.10.2
+created_at: '2024-09-04T21:04:22.616756Z'
+stack_name: scvi-gpu-base
+stack_version: 1.0.0
