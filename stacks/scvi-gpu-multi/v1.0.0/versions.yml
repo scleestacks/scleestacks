@@ -3,6 +3,6 @@ applications:
   version: 1.10.2
 - name: Muon
   version: 0.1.6
-created_at: '2024-09-04T21:04:30.158926Z'
+created_at: '2024-09-04T22:31:55.588384Z'
 stack_name: scvi-gpu-multi
 stack_version: 1.0.0
