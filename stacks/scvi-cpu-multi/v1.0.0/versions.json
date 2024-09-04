@@ -1,7 +1,7 @@
 {
   "stack_version": "1.0.0",
   "stack_name": "scvi-cpu-multi",
-  "created_at": "2024-09-04T21:04:11.999028Z",
+  "created_at": "2024-09-04T22:31:37.095167Z",
   "applications": [
     {
       "name": "Scanpy",
