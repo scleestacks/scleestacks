@@ -1,0 +1,10 @@
+applications:
+- name: Scanpy
+  version: 1.10.2
+- name: Scirpy
+  version: 0.17.2
+- name: Muon
+  version: 0.1.6
+created_at: '2024-09-04T22:24:39.854941Z'
+stack_name: airr-multi
+stack_version: 1.0.0
